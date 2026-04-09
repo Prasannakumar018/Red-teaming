@@ -8,6 +8,6 @@ This is a collection of my personal notes, write-ups, and resources on cybersecu
 - [CTF Challenge Write-up: PicoCTF](ctf-picoctf.md)
 
 ## Security Notes
-- [API Testing](CyberSecurity/Attacks/SSA/API%20TESTING.md)
+- [API Testing](CyberSecurity/Attacks/SSA/API%20TESTING)
 - [JWT attacks](CyberSecurity/Attacks/SSA/JWT%20attacks.md)
 - [SQL Injection](CyberSecurity/Attacks/SSA/SQL%20Injection%20(SQLi).md)
