@@ -1,3 +1,8 @@
+---
+title: API TESTING
+---
+
+
 -> API testing is important as vulnerabilities in APIs
 
 Under API testing we have two:
