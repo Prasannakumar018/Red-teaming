@@ -1,3 +1,6 @@
+---
+title: CORS (Cross Origin Resource Sharing)
+---
 
 **References:**
 1) [[Necessary HTTP Headers]]
