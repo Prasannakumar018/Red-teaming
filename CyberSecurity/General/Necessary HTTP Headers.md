@@ -1,0 +1,33 @@
+## Vulnerable / Misconfigured HTTP Headers – Detailed in Table Format
+
+
+| **HTTP Header**                 | **Purpose**                                      | **Risk if Missing / Misconfigured**                          | **Example Vulnerable Scenario**                                      | **Sample Exploit / Payload**                                          | **Recommended Fix**                                                                 |
+| ------------------------------- | ------------------------------------------------ | ------------------------------------------------------------ | -------------------------------------------------------------------- | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `Content-Security-Policy` (CSP) | Mitigates XSS, data injection                    | Allows execution of malicious inline or external scripts     | No restrictions on `script-src` → attacker injects JavaScript        | `<script src="https://evil.com/xss.js"></script>`                     | `Content-Security-Policy: default-src 'self'; script-src 'self'; object-src 'none'` |
+| `X-Frame-Options`               | Prevents clickjacking                            | App can be embedded in a malicious iframe                    | Attacker frames target site and overlays fake UI                     | `<iframe src="https://target.com" style="opacity:0;"></iframe>`       | `X-Frame-Options: DENY` or `SAMEORIGIN`                                             |
+| `X-Content-Type-Options`        | Prevents MIME type sniffing                      | Browser guesses MIME type, runs JS in image or other context | JS file disguised as image is executed                               | Upload `.js` as `.jpg` → browser runs it as script                    | `X-Content-Type-Options: nosniff`                                                   |
+| `Strict-Transport-Security`     | Forces HTTPS, prevents SSL stripping             | Downgrade attacks; HTTP access is allowed                    | User types `http://example.com`, attacker intercepts                 | MITM strips HTTPS redirect                                            | `Strict-Transport-Security: max-age=63072000; includeSubDomains; preload`           |
+| `Referrer-Policy`               | Controls referrer data sent to other sites       | Sensitive URL info leaks in `Referer` header                 | Sensitive data in query string is leaked to external site            | `Referer: https://target.com/private?token=123`                       | `Referrer-Policy: no-referrer` or `strict-origin-when-cross-origin`                 |
+| `Permissions-Policy`            | Restricts use of browser features                | Unrestricted access to sensitive features                    | Attacker can trigger camera, mic, or geolocation without user notice | `navigator.geolocation.getCurrentPosition(alert)`                     | `Permissions-Policy: camera=(), geolocation=(), microphone=()`                      |
+| `Access-Control-Allow-Origin`   | Controls cross-origin resource access (CORS)     | Untrusted domains can access protected APIs                  | API responds with `Access-Control-Allow-Origin: *`                   | JS from `evil.com` fetches user data using cookies via CORS           | Use a whitelist: `Access-Control-Allow-Origin: https://trusted.com`                 |
+| `Cross-Origin-Resource-Policy`  | Prevents resource loading from untrusted origins | Third-party sites can embed and exploit resource loading     | Sensitive files loaded cross-origin                                  | `<img src="https://target.com/private.png">`                          | `Cross-Origin-Resource-Policy: same-origin`                                         |
+| `Cross-Origin-Opener-Policy`    | Isolates browser contexts                        | Allows Spectre-type side-channel attacks                     | Malicious site opens app in new window → shares process memory       | Not directly payloaded but increases browser isolation attack surface | `Cross-Origin-Opener-Policy: same-origin`                                           |
+| `Cross-Origin-Embedder-Policy`  | Ensures only secure resources can be embedded    | Can load untrusted third-party resources                     | App loads `evil.com` scripts as part of its page                     | `Cross-Origin-Embedder-Policy: unsafe-none`                           | `Cross-Origin-Embedder-Policy: require-corp`                                        |
+| `Server`                        | Discloses server software info                   | Reveals web server name and version                          | `Server: Apache/2.4.49` can lead to CVE-specific exploits            | `curl -I https://target.com` → reveals Apache, Nginx, IIS, etc.       | Remove header or obfuscate: `Server: secure`                                        |
+| `X-Powered-By`                  | Reveals tech stack info (e.g. PHP, ASP.NET)      | Informs attacker of backend framework and version            | `X-Powered-By: PHP/7.4.3` reveals exploitable version                | `curl -I https://target.com` → reveals `PHP/7.4.3`, `ASP.NET`, etc.   | Remove the header entirely                                                          |
+| `Cache-Control`                 | Controls browser/proxy caching                   | Sensitive data may be cached locally or in shared proxies    | Authentication tokens or PII cached in browser or proxy              | Browser back button reveals sensitive data post-logout                | `Cache-Control: no-store, no-cache, must-revalidate`                                |
+| `Pragma`                        | Legacy header for HTTP/1.0 cache control         | Same as above, but affects older clients                     | Same as above                                                        | Used in combination with Cache-Control                                | `Pragma: no-cache`                                                                  |
+
+
+
+
+
+## **🔧 Tools to Automate Header Testing**
+
+| Tool         | Use Case                                   |
+| ------------ | ------------------------------------------ |
+| `curl -I`    | Quick header check                         |
+| `nikto`      | Web server header & config scan            |
+| `OWASP ZAP`  | Full active/passive scan + header analysis |
+| `Burp Suite` | Manual/automated header testing            |
+| `testssl.sh` | TLS & HSTS testing                         |

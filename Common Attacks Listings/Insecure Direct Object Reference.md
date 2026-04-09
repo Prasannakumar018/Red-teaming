@@ -1,0 +1,1 @@
+-> IDOR can be made using the [[Broken Access Control]] 

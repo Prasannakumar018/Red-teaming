@@ -1,0 +1,372 @@
+{
+  "main": {
+    "id": "fce015b879442b74",
+    "type": "split",
+    "children": [
+      {
+        "id": "cd33e22a639fff89",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3c091897dadbd44e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CyberSecurity/RED TEAMING.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "RED TEAMING"
+            }
+          },
+          {
+            "id": "187a3618dd5b1318",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CyberSecurity/Tools/Nessus.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Nessus"
+            }
+          },
+          {
+            "id": "00cdfc60e725cc51",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CyberSecurity/Attacks/CSA/CORS (Cross Origin Resource Sharing).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CORS (Cross Origin Resource Sharing)"
+            }
+          },
+          {
+            "id": "21f62c63434a1579",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Common Attacks Listings/Insecure Direct Object Reference.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Insecure Direct Object Reference"
+            }
+          },
+          {
+            "id": "96c047007f516295",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CyberSecurity/owasp 10.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "owasp 10"
+            }
+          },
+          {
+            "id": "e84365fb035bb7bb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CyberSecurity/RED TEAMING.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "RED TEAMING"
+            }
+          },
+          {
+            "id": "55b08efeff1f722e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CyberSecurity/General/Cookies.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Cookies"
+            }
+          },
+          {
+            "id": "7fe26b2f28b80441",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CyberSecurity/Attacks/CSA/$Client Side Attacks.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "$Client Side Attacks"
+            }
+          },
+          {
+            "id": "d630af316f67db89",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CyberSecurity/Attacks/CSA/CSRF (Cross-site request forgery (CSRF)).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CSRF (Cross-site request forgery (CSRF))"
+            }
+          },
+          {
+            "id": "f2efb345dbc08c87",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CyberSecurity/General/General tries.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "General tries"
+            }
+          },
+          {
+            "id": "f86a0f4e58f10e5c",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.4"
+            }
+          },
+          {
+            "id": "45819b778ce1b691",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "Untitled 2.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "Untitled 2"
+            }
+          }
+        ],
+        "currentTab": 11
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "aae1e59e96ff6587",
+    "type": "split",
+    "children": [
+      {
+        "id": "89fdf510dfcd144e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "23780134d74b60d7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "730e89440c040db7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "e8d3f047d4d518c6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "97456598c4e28613",
+    "type": "split",
+    "children": [
+      {
+        "id": "9865f8ed0d41280c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6c1d5be73be7455a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "193c25b84285bd64",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "e65c9fe090cf5250",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "d38bd7307d1b494a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "github-sync:Sync with Remote": false
+    }
+  },
+  "active": "45819b778ce1b691",
+  "lastOpenFiles": [
+    "2026-04-09.md",
+    "Untitled 2.base",
+    "Untitled 1.canvas",
+    "Untitled 1.base",
+    "CyberSecurity/RED TEAMING.md",
+    "Untitled.base",
+    "CyberSecurity/General/Enumeration.md",
+    "CyberSecurity/General/Encoding and Decoding.md",
+    "CyberSecurity/General/CRYPTOGRAPHIC FAILURES.md",
+    "CyberSecurity/General/Cookies.md",
+    "CyberSecurity/General/Comprehensive Table of Web Application Attack Vectors and Vulnerabilities.md",
+    "CyberSecurity/General/#GENERAL TOPICS AND TOOLS.md",
+    "CyberSecurity/Attacks/SSA/API TESTING.md",
+    "CyberSecurity/Attacks/SSA/$Server Side Attacks.md",
+    "CyberSecurity/Attacks/CSA/CSRF (Cross-site request forgery (CSRF)).md",
+    "CyberSecurity/Attacks/CSA/CORS (Cross Origin Resource Sharing).md",
+    "CyberSecurity/Attacks/CSA/$Client Side Attacks.md",
+    "CyberSecurity/Attacks/CSA/Clickjacking (UI redressing).md",
+    "CyberSecurity/Attacks/CSA/Cross-site scripting.md",
+    "exploitingcorsmisconfigurations.pdf",
+    "CyberSecurity/General/Vulnerable and Outdated Components.md",
+    "CyberSecurity/owasp 10.md",
+    "CyberSecurity/General/Insecure Design.md",
+    "CyberSecurity/General/Terminologies.md",
+    "CyberSecurity/Attacks/SSA/Broken Access Control.md",
+    "Untitled.canvas",
+    "CyberSecurity/General/General tries.md",
+    "Attacks based on Language/Java.md",
+    "Common Attacks Listings/Insecure Direct Object Reference.md",
+    "CyberSecurity/Tools/Metasploit.md",
+    "Pasted image 20250729115727.png",
+    "CyberSecurity/Tools/Nessus.md",
+    "Random/Pasted image 20250509103045.png",
+    "Random/Pasted image 20250509102914.png",
+    "Random/Pasted image 20250509102634.png",
+    "Random/Pasted image 20250509102315.png",
+    "portswigger_net_web_security_sql_injection_cheat_sheet.pdf",
+    "Random/Pasted image 20250509103214.png",
+    "Random",
+    "Random/Pasted image 20250729090154.png",
+    "Random/Pasted image 20250509112552.png",
+    "Random/Pasted image 20250509112053.png",
+    "Random/Pasted image 20250509111714.png",
+    "CyberSecurity/Tools",
+    "Untitled",
+    "Common Attacks Listings",
+    "Attacks based on Language"
+  ]
+}
