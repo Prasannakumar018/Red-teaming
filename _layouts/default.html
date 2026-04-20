@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+
+    <style>
+      /* Search bar */
+      #search-wrapper {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: #151515;
+        padding: 12px 0;
+        border-bottom: 1px solid #333;
+      }
+      #search-wrapper .container {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+      }
+      #search-input {
+        width: 100%;
+        padding: 10px 16px 10px 40px;
+        font-size: 15px;
+        font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+        background: #1a1a1a;
+        color: #b5e853;
+        border: 1px solid #333;
+        border-radius: 6px;
+        outline: none;
+        box-sizing: border-box;
+        transition: border-color 0.2s;
+      }
+      #search-input:focus {
+        border-color: #b5e853;
+        box-shadow: 0 0 8px rgba(181, 232, 83, 0.2);
+      }
+      #search-input::placeholder {
+        color: #666;
+      }
+      #search-icon {
+        position: absolute;
+        left: 32px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #666;
+        pointer-events: none;
+        font-size: 16px;
+      }
+      /* Results dropdown */
+      #search-results {
+        position: absolute;
+        top: 100%;
+        left: 20px;
+        right: 20px;
+        background: #1a1a1a;
+        border: 1px solid #333;
+        border-top: none;
+        border-radius: 0 0 6px 6px;
+        max-height: 420px;
+        overflow-y: auto;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      }
+      #search-results.active {
+        display: block;
+      }
+      .search-result-item {
+        padding: 12px 16px;
+        border-bottom: 1px solid #252525;
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+      .search-result-item:last-child {
+        border-bottom: none;
+      }
+      .search-result-item:hover {
+        background: #222;
+      }
+      .search-result-title {
+        color: #b5e853;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+      .search-result-path {
+        color: #555;
+        font-size: 11px;
+        margin-bottom: 4px;
+      }
+      .search-result-snippet {
+        color: #999;
+        font-size: 12px;
+        line-height: 1.4;
+      }
+      .search-result-snippet mark {
+        background: transparent;
+        color: #b5e853;
+        font-weight: bold;
+      }
+      .search-no-results {
+        padding: 16px;
+        color: #666;
+        text-align: center;
+        font-size: 13px;
+      }
+      .search-result-count {
+        padding: 8px 16px;
+        color: #555;
+        font-size: 11px;
+        border-bottom: 1px solid #252525;
+      }
+      /* Keyboard hint */
+      .search-hint {
+        padding: 8px 16px;
+        color: #444;
+        font-size: 11px;
+        text-align: center;
+        border-top: 1px solid #252525;
+      }
+      .search-hint kbd {
+        background: #252525;
+        border: 1px solid #333;
+        border-radius: 3px;
+        padding: 1px 5px;
+        font-size: 10px;
+        color: #666;
+      }
+    </style>
+
+{% seo %}
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="{{ '/' | relative_url }}">
+          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        </a>
+        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+
+        <section id="downloads">
+          {% if site.show_downloads %}
+            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
+            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
+          {% endif %}
+          <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div id="search-wrapper">
+      <div class="container">
+        <span id="search-icon">&#128269;</span>
+        <input type="text" id="search-input" placeholder="Search all notes... (e.g. magic bytes, SQLi, XSS)" autocomplete="off" />
+        <div id="search-results"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <section id="main_content">
+        {{ content }}
+      </section>
+    </div>
+
+    <script>
+    (function() {
+      var searchData = null;
+      var input = document.getElementById('search-input');
+      var resultsContainer = document.getElementById('search-results');
+      var selectedIndex = -1;
+
+      // Load search index
+      fetch('{{ "/search.json" | relative_url }}')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          // Filter out empty entries and the search.json itself
+          searchData = data.filter(function(item) {
+            return item && item.title && item.content && item.content.trim().length > 0;
+          });
+        })
+        .catch(function(err) { console.error('Search index load failed:', err); });
+
+      function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+      }
+
+      function getSnippet(content, query, contextLen) {
+        contextLen = contextLen || 80;
+        var lower = content.toLowerCase();
+        var qLower = query.toLowerCase();
+        var idx = lower.indexOf(qLower);
+        if (idx === -1) return '';
+
+        var start = Math.max(0, idx - contextLen);
+        var end = Math.min(content.length, idx + query.length + contextLen);
+        var snippet = '';
+
+        if (start > 0) snippet += '...';
+        var raw = content.substring(start, end);
+
+        // Highlight all occurrences of the query in the snippet
+        var regex = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+        snippet += escapeHtml(raw).replace(regex, '<mark>$1</mark>');
+        if (end < content.length) snippet += '...';
+
+        return snippet;
+      }
+
+      function search(query) {
+        if (!searchData || query.length < 2) {
+          resultsContainer.className = '';
+          resultsContainer.innerHTML = '';
+          selectedIndex = -1;
+          return;
+        }
+
+        var qLower = query.toLowerCase();
+        var results = [];
+
+        for (var i = 0; i < searchData.length; i++) {
+          var item = searchData[i];
+          var titleMatch = item.title.toLowerCase().indexOf(qLower) !== -1;
+          var contentMatch = item.content.toLowerCase().indexOf(qLower) !== -1;
+
+          if (titleMatch || contentMatch) {
+            // Score: title matches rank higher
+            var score = 0;
+            if (titleMatch) score += 10;
+            if (contentMatch) {
+              // Count occurrences
+              var cnt = 0;
+              var pos = 0;
+              var cLower = item.content.toLowerCase();
+              while ((pos = cLower.indexOf(qLower, pos)) !== -1) { cnt++; pos += qLower.length; }
+              score += cnt;
+            }
+            results.push({ item: item, score: score, titleMatch: titleMatch, contentMatch: contentMatch });
+          }
+        }
+
+        results.sort(function(a, b) { return b.score - a.score; });
+
+        selectedIndex = -1;
+
+        if (results.length === 0) {
+          resultsContainer.innerHTML = '<div class="search-no-results">No results for "<strong>' + escapeHtml(query) + '</strong>"</div>';
+          resultsContainer.className = 'active';
+          return;
+        }
+
+        var html = '<div class="search-result-count">' + results.length + ' result' + (results.length > 1 ? 's' : '') + '</div>';
+
+        var limit = Math.min(results.length, 15);
+        for (var j = 0; j < limit; j++) {
+          var r = results[j];
+          var snippet = getSnippet(r.item.content, query);
+          var titleHtml = escapeHtml(r.item.title).replace(
+            new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi'),
+            '<mark>$1</mark>'
+          );
+
+          html += '<a href="' + r.item.url + '" class="search-result-item" data-idx="' + j + '">'
+            + '<div class="search-result-title">' + titleHtml + '</div>'
+            + '<div class="search-result-path">' + escapeHtml(r.item.url) + '</div>'
+            + (snippet ? '<div class="search-result-snippet">' + snippet + '</div>' : '')
+            + '</a>';
+        }
+
+        if (results.length > limit) {
+          html += '<div class="search-no-results">... and ' + (results.length - limit) + ' more</div>';
+        }
+
+        html += '<div class="search-hint"><kbd>↑</kbd> <kbd>↓</kbd> to navigate &middot; <kbd>Enter</kbd> to open &middot; <kbd>Esc</kbd> to close</div>';
+
+        resultsContainer.innerHTML = html;
+        resultsContainer.className = 'active';
+      }
+
+      function updateSelection() {
+        var items = resultsContainer.querySelectorAll('.search-result-item');
+        for (var i = 0; i < items.length; i++) {
+          items[i].style.background = (i === selectedIndex) ? '#222' : '';
+        }
+        if (selectedIndex >= 0 && items[selectedIndex]) {
+          items[selectedIndex].scrollIntoView({ block: 'nearest' });
+        }
+      }
+
+      // Events
+      var debounceTimer;
+      input.addEventListener('input', function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(function() {
+          search(input.value.trim());
+        }, 150);
+      });
+
+      input.addEventListener('keydown', function(e) {
+        var items = resultsContainer.querySelectorAll('.search-result-item');
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          if (selectedIndex < items.length - 1) { selectedIndex++; updateSelection(); }
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          if (selectedIndex > 0) { selectedIndex--; updateSelection(); }
+        } else if (e.key === 'Enter') {
+          e.preventDefault();
+          if (selectedIndex >= 0 && items[selectedIndex]) {
+            window.location.href = items[selectedIndex].getAttribute('href');
+          }
+        } else if (e.key === 'Escape') {
+          resultsContainer.className = '';
+          resultsContainer.innerHTML = '';
+          input.blur();
+        }
+      });
+
+      // Close results when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('#search-wrapper')) {
+          resultsContainer.className = '';
+        }
+      });
+
+      // Re-show results when clicking back into search
+      input.addEventListener('focus', function() {
+        if (input.value.trim().length >= 2 && resultsContainer.innerHTML) {
+          resultsContainer.className = 'active';
+        }
+      });
+
+      // Keyboard shortcut: "/" to focus search
+      document.addEventListener('keydown', function(e) {
+        if (e.key === '/' && document.activeElement !== input && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+          e.preventDefault();
+          input.focus();
+        }
+      });
+    })();
+    </script>
+
+  </body>
+</html>

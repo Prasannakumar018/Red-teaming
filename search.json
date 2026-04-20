@@ -1,0 +1,15 @@
+---
+layout: null
+---
+[
+  {% for page in site.pages %}
+    {% if page.url contains '.json' or page.url contains '.xml' or page.url contains '.css' or page.url contains '.js' %}
+    {% else %}
+    {
+      "title": {{ page.title | default: page.name | replace: ".md", "" | jsonify }},
+      "url": {{ page.url | relative_url | jsonify }},
+      "content": {{ page.content | strip_html | strip_newlines | replace: '"', '\"' | replace: '\', '\\' | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endif %}
+  {% endfor %}
+]
