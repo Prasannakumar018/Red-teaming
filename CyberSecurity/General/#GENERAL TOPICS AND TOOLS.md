@@ -1,10 +1,10 @@
-[[RED TEAMING]]
-[[nmap]]
-[[Encoding and Decoding]]
-[[General tries]]
-[[CRYPTOGRAPHIC FAILURES]]
-[[Subdomain findings]]
-[[Enumeration]]
+[RED TEAMING](../../CyberSecurity/RED%20TEAMING)
+[nmap](../../CyberSecurity/Tools/nmap)
+[Encoding and Decoding](../../CyberSecurity/General/Encoding%20and%20Decoding)
+[General tries](../../CyberSecurity/General/General%20tries)
+[CRYPTOGRAPHIC FAILURES](../../CyberSecurity/General/CRYPTOGRAPHIC%20FAILURES)
+[Subdomain findings](../../CyberSecurity/Tools/Subdomain%20findings)
+[Enumeration](../../CyberSecurity/General/Enumeration)
 
 
 |Week|Focus Area|Topics|Target Labs|Notes|
@@ -19,7 +19,7 @@
 
 So , on the whole what should we learnt as a Ethical hacker and also along knowing the development as well, we have to sanitize each and every data that have been passing from the user side and also, mostly commonly we can segregate the attacks into certain types,
 
-![[Pasted image 20250611131647.png]]
+![](../../Random/Pasted%20image%2020250611131647.png)
 ##### **SERVER-SIDE ATTACKS (SSA)**
 
 | **Category**                | **Examples**                                                                                      |

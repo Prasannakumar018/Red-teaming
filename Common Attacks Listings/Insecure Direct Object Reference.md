@@ -1,1 +1,1 @@
--> IDOR can be made using the [[Broken Access Control]] 
+-> IDOR can be made using the [Broken Access Control](../CyberSecurity/Attacks/SSA/Broken%20Access%20Control)

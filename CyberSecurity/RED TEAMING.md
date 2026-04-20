@@ -1,6 +1,6 @@
-[[$Server Side Attacks]] AND [[$Client Side Attacks]] along with the [[Learnings from CTF's]] , to know about [[Terminologies]]
+[Server Side Attacks](../CyberSecurity/Attacks/SSA/$Server%20Side%20Attacks) AND [Client Side Attacks](../CyberSecurity/Attacks/CSA/$Client%20Side%20Attacks) along with the [Learnings from CTF's](../Learnings%20from%20CTF's/Pico%20CTF) , to know about [Terminologies](../CyberSecurity/General/Terminologies)
 
-[[owasp 10]]
+[owasp 10](../CyberSecurity/owasp%2010)
 Stages of Penetration Testing:
 
 1. Planning and Reconnaissance (Subdomain finding)
@@ -242,73 +242,73 @@ Dev + Operation + Automation = DevOps
 
 1. **SubDomain** finder --> Subfinder, AssetFinder, Amass
 
-![[Pasted image 20250509102315.png]]
+![](../Random/Pasted%20image%2020250509102315.png)
 
 2. **PortScanning**    --> Namp and Masscan
-![[Pasted image 20250509102634.png]]
+![](../Random/Pasted%20image%2020250509102634.png)
 
  3. **Screenshot** for SubDomains --> Eyewitness and aquatone
-![[Pasted image 20250509102914.png]]
+![](../Random/Pasted%20image%2020250509102914.png)
 
 4. **Directory** findings --> FFuf and gobuster
-![[Pasted image 20250509103045.png]]
+![](../Random/Pasted%20image%2020250509103045.png)
 
 5. **JavaScript** Analysis --> Linkfinder, gf
-![[Pasted image 20250509103214.png]]
+![](../Random/Pasted%20image%2020250509103214.png)
 
 6. Automation of **Parameter discovery**--> Arjun, Spider
-![[Pasted image 20250509105013.png]]
+![](../Random/Pasted%20image%2020250509105013.png)
 
 7. Automaion **XSS** --> dalfox,XSStrike
-![[Pasted image 20250509105139.png]]
+![](../Random/Pasted%20image%2020250509105139.png)
 
 8. Automate **SQL Injection** testing--> Sqlmap
-![[Pasted image 20250509105307.png]]
+![](../Random/Pasted%20image%2020250509105307.png)
 
 9. **SSRF** automation --> Gopherus, interactsh (Redis, Mysql and other Servers)
-![[Pasted image 20250509111714.png]]
+![](../Random/Pasted%20image%2020250509111714.png)
 
 
 10. Automating **LFI** (Local File Inclusion) and **RFI**(Remote File Inclusion) detection--> lfisuite, fimap
-![[Pasted image 20250509112053.png]]
+![](../Random/Pasted%20image%2020250509112053.png)
 
 11. Automate **Open Redirect Detection** -->(Phishing, Session Hijacking , unathorized access) Oralyzer
-![[Pasted image 20250509112255.png]]
+![](../Random/Pasted%20image%2020250509112255.png)
 
 
 12. Automating **Security Headers** check --> Nikto, Httpx-Toolkit
-![[Pasted image 20250509112405.png]]
+![](../Random/Pasted%20image%2020250509112405.png)
 
 
 13. Automating **API** recon --> Postman, KiteRunner
-![[Pasted image 20250509112552.png]]
+![](../Random/Pasted%20image%2020250509112552.png)
 
 
 14. Automating **Content Discovery** --> gau, waybackUrls
-![[Pasted image 20250509112703.png]]
+![](../Random/Pasted%20image%2020250509112703.png)
 
 
 15. Automating **S3 bucket enumeration** --> AWSBucketDump
-![[Pasted image 20250509112816.png]]
+![](../Random/Pasted%20image%2020250509112816.png)
 
 16. Automating **CMS(Content Management System) enumeration** -->(wordpress, Joomla, Drupal) CMSeek
-![[Pasted image 20250509113115.png]]
+![](../Random/Pasted%20image%2020250509113115.png)
 
 
 17. Automating **WAF detection** --> WAFOOF
-![[Pasted image 20250509113246.png]]
+![](../Random/Pasted%20image%2020250509113246.png)
 
 
 18. Automating **Information Disclosure Detection** --> git-dumper
-![[Pasted image 20250509113404.png]]
+![](../Random/Pasted%20image%2020250509113404.png)
 
 
 19. Automating **Reverse Shell** Generation --> MSFvenom(Metaspolit)
-![[Pasted image 20250509113523.png]]
+![](../Random/Pasted%20image%2020250509113523.png)
 
 
 20. Automating **Mass Exploitation with Metaspolit** -->Metasploit
-![[Pasted image 20250509113625.png]]
+![](../Random/Pasted%20image%2020250509113625.png)
 
 
 

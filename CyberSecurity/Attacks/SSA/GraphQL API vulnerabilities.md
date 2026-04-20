@@ -30,5 +30,5 @@ type Product {
 
 
 
-![[Pasted image 20250706213350.png]]
+![](../../../Random/Pasted%20image%2020250706213350.png)
 

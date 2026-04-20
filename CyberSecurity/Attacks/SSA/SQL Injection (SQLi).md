@@ -48,7 +48,7 @@ Many high-profile ransomware events **began with SQLi** as the initial access ve
 
 
 ```
-![[portswigger_net_web_security_sql_injection_cheat_sheet.pdf]]
+[SQL Injection Cheat Sheet PDF](../../../portswigger_net_web_security_sql_injection_cheat_sheet.pdf)
 
 
 

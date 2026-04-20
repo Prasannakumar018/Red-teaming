@@ -6,8 +6,8 @@ title: API TESTING
 -> API testing is important as vulnerabilities in APIs
 
 Under API testing we have two:
-1) REST [[API TESTING]]
-2) [[GraphQL API vulnerabilities]]
+1) REST [API TESTING](../../../CyberSecurity/Attacks/SSA/API%20TESTING)
+2) [GraphQL API vulnerabilities](../../../CyberSecurity/Attacks/SSA/GraphQL%20API%20vulnerabilities)
 
 
 

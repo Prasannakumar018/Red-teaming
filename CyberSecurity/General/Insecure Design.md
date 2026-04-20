@@ -2,7 +2,7 @@
 If we genuinely want to "move left" as an industry, it calls for more use of threat modeling, secure design patterns and principles, and reference architectures.
 
 
-![Pasted image 20250728193228.png](app://8c664618666df04392d764bf34f20df6f406/Users/I578057/Documents/Obsidian%20Vault/Random/Pasted%20image%2020250728193228.png?1753711348256)
+![](../../Random/Pasted%20image%2020250728193228.png)
 
 
 

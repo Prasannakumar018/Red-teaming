@@ -15,7 +15,7 @@
 
 The JWT spec is extended by both the **JSON Web Signature (JWS)** and **JSON Web Encryption (JWE)** specifications, which define concrete ways of actually implementing JWTs.
 
-![[Pasted image 20250705192523.png]]
+![](../../../Random/Pasted%20image%2020250705192523.png)
 
 In other words, a JWT is usually either a JWS or JWE token. When people use the term "JWT", they almost always mean a JWS token. JWEs are very similar, except that the actual contents of the token are encrypted rather than just encoded.
 

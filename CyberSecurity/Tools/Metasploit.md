@@ -1,7 +1,7 @@
 **Refernce:**
 * Ec-council course
 
-![[Pasted image 20250729115727.png]]
+![](../../Pasted%20image%2020250729115727.png)
 
 
 

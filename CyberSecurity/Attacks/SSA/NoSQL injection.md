@@ -93,7 +93,7 @@ Some common types of NoSQL databases include:
 - **Graph databases** - These use nodes to store data entities, and edges to store relationships between entities. Examples include **Neo4j** and **Amazon Neptune**.
 
 
-![[Pasted image 20250724110718.png]]
+![](../../../Random/Pasted%20image%2020250724110718.png)
 
 
 

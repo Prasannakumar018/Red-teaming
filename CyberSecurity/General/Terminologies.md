@@ -12,7 +12,7 @@ References:
 
 
 
-![[Pasted image 20250728193228.png]]
+![](../../Random/Pasted%20image%2020250728193228.png)
 
 
 
@@ -42,7 +42,7 @@ Updates->
 
 
 ### **Vulnerability Analysis:**
-![[Pasted image 20250729090154.png]]
+![](../../Random/Pasted%20image%2020250729090154.png)
 
 
 

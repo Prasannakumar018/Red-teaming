@@ -1,7 +1,7 @@
 - Waybackurl (https://web.archive.org/)
-- google dorking [[Google dorking]]
+- google dorking [Google dorking](../../CyberSecurity/Tools/Google%20dorking)
 - Check js files for credentials leakage[https://github.com/GerbenJavado/LinkFinder]
-- Check [[Comprehensive Table of Web Application Attack Vectors and Vulnerabilities]]
+- Check [Comprehensive Table of Web Application Attack Vectors and Vulnerabilities](../../CyberSecurity/General/Comprehensive%20Table%20of%20Web%20Application%20Attack%20Vectors%20and%20Vulnerabilities)
 
 
 
@@ -19,7 +19,7 @@
 
 
 ---
-Just to know, for more details refer [[Comprehensive Table of Web Application Attack Vectors and Vulnerabilities]]
+Just to know, for more details refer [Comprehensive Table of Web Application Attack Vectors and Vulnerabilities](../../CyberSecurity/General/Comprehensive%20Table%20of%20Web%20Application%20Attack%20Vectors%20and%20Vulnerabilities)
 ### **Attack Categories by Interaction Point / Functionality**
 
 This list is designed to guide your thought process when examining a specific part of a system.

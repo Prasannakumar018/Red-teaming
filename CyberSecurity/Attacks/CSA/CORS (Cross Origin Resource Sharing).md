@@ -3,11 +3,11 @@ title: CORS (Cross Origin Resource Sharing)
 ---
 
 **References:**
-1) [[Necessary HTTP Headers]]
+1) [Necessary HTTP Headers](../../../CyberSecurity/General/Necessary%20HTTP%20Headers)
 2) https://ejj.io/misconfigured-cors
 3) https://fetch.spec.whatwg.org/#access-control-allow-origin-response-header
 4) https://webhook.site/#!/view/1f11bb2b-0a9f-4933-8280-45f8f9d6a1d4
-5) ![[exploitingcorsmisconfigurations.pdf]]
+5) [Exploiting CORS Misconfigurations PDF](../../../exploitingcorsmisconfigurations.pdf)
 
 
 
@@ -17,7 +17,7 @@ title: CORS (Cross Origin Resource Sharing)
 
 
 
-![[Pasted image 20250717224352.png]]
+![](../../../Random/Pasted%20image%2020250717224352.png)
 
 #### CORS for hackers:
 
@@ -44,7 +44,7 @@ The same-origin policy restricts scripts on one origin from accessing data from 
 
 **Example:**
 
-![[Pasted image 20250717225754.png]]
+![](../../../Random/Pasted%20image%2020250717225754.png)
 
 
 # Pre-flight checks:
