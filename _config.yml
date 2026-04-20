@@ -1,0 +1,26 @@
+title: Red Teaming Notes
+description: A collection of cybersecurity notes, write-ups, and resources for red teaming and penetration testing.
+remote_theme: pages-themes/hacker@v0.2.0
+plugins:
+  - jekyll-remote-theme
+baseurl: /Red-teaming
+url: https://prasannakumar018.github.io
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Include all directories (Jekyll ignores dirs starting with special chars by default)
+include:
+  - "Attacks based on Language"
+  - "Common Attacks Listings"
+  - "CyberSecurity"
+  - "Learnings from CTF's"
+
+# Exclude Obsidian config and non-content files
+exclude:
+  - .obsidian
+  - .DS_Store
+  - "*.base"
+  - "*.canvas"
+  - README.md
