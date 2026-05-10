@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Red Teaming Guide — Complete Pentesting Resource</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/landing.css' | relative_url }}">
+  {% seo %}
+</head>
+<body class="landing-body">
+
+  <!-- Nav -->
+  <nav class="landing-nav">
+    <div class="landing-nav-inner">
+      <a class="landing-nav-brand" href="{{ '/' | relative_url }}">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Red Teaming Guide
+      </a>
+      <div class="landing-nav-links">
+        <a href="{{ '/docs/' | relative_url }}">Docs</a>
+        <a href="{{ '/CONTRIBUTING' | relative_url }}">Contribute</a>
+        <a href="https://github.com/Prasannakumar018/Red-teaming" class="landing-btn-outline">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">Open Source &middot; Community Driven</div>
+      <h1 class="hero-title">The Complete<br><span class="hero-highlight">Red Teaming</span> Guide</h1>
+      <p class="hero-desc">A comprehensive, beginner-to-advanced resource for penetration testers and red teamers. One website. Everything you need.</p>
+      <div class="hero-actions">
+        <a href="{{ '/docs/' | relative_url }}" class="landing-btn-primary">Start Learning</a>
+        <a href="https://github.com/Prasannakumar018/Red-teaming" class="landing-btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Star on GitHub
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-number">50+</span>
+          <span class="hero-stat-label">Articles</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">9</span>
+          <span class="hero-stat-label">Categories</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">4</span>
+          <span class="hero-stat-label">Real Writeups</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="features-inner">
+      <h2 class="features-title">What's Inside</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#128187;</div>
+          <h3>Server-Side Attacks</h3>
+          <p>SQL Injection, NoSQL, Command Injection, Authentication bypass, JWT, GraphQL, API Testing</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#127760;</div>
+          <h3>Client-Side Attacks</h3>
+          <p>XSS, CSRF, CORS misconfiguration, Clickjacking, DOM manipulation</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128221;</div>
+          <h3>Real-World Writeups</h3>
+          <p>Auth Bypass to SSRF, Prompt Injection, RCE via sandbox escape — from actual assessments</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128736;</div>
+          <h3>Tools & Techniques</h3>
+          <p>Nmap, Metasploit, Nessus, Google Dorking, Subdomain enumeration, Reverse shells</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#127919;</div>
+          <h3>CTF Writeups</h3>
+          <p>Solutions and walkthroughs from PicoCTF, TryHackMe, and HackingHub</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128200;</div>
+          <h3>Learning Roadmap</h3>
+          <p>Structured path from beginner to advanced with difficulty badges on every article</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap preview -->
+  <section class="landing-roadmap">
+    <div class="landing-roadmap-inner">
+      <h2 class="features-title">Learning Path</h2>
+      <div class="landing-path">
+        <div class="path-step">
+          <div class="path-dot path-dot--beginner"></div>
+          <div class="path-content">
+            <h4>Beginner</h4>
+            <p>Terminologies, OWASP Top 10, HTTP Headers, Cookies, Encoding, Enumeration</p>
+          </div>
+        </div>
+        <div class="path-step">
+          <div class="path-dot path-dot--intermediate"></div>
+          <div class="path-content">
+            <h4>Intermediate</h4>
+            <p>SQL Injection, XSS, CSRF, CORS, IDOR, Authentication, Access Control</p>
+          </div>
+        </div>
+        <div class="path-step">
+          <div class="path-dot path-dot--advanced"></div>
+          <div class="path-content">
+            <h4>Advanced</h4>
+            <p>JWT Attacks, GraphQL, NoSQL Injection, RCE, Reverse Shell, AI/LLM Security</p>
+          </div>
+        </div>
+        <div class="path-step">
+          <div class="path-dot path-dot--practice"></div>
+          <div class="path-content">
+            <h4>Practice</h4>
+            <p>CTF challenges, real-world writeups, hands-on tool usage</p>
+          </div>
+        </div>
+      </div>
+      <a href="{{ '/docs/' | relative_url }}" class="landing-btn-primary" style="margin-top: 32px;">Explore Full Roadmap</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="landing-cta">
+    <div class="landing-cta-inner">
+      <h2>Built by the community, for the community</h2>
+      <p>Contribute your knowledge. Fix a typo. Add a writeup. Every contribution helps someone learn.</p>
+      <div class="hero-actions">
+        <a href="{{ '/CONTRIBUTING' | relative_url }}" class="landing-btn-primary">Start Contributing</a>
+        <a href="{{ '/docs/' | relative_url }}" class="landing-btn-secondary">Browse Content</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="landing-footer">
+    <p>Built by <a href="https://github.com/Prasannakumar018">@Prasannakumar018</a> &middot; Content: CC BY-SA 4.0 &middot; Code: MIT</p>
+  </footer>
+
+</body>
+</html>

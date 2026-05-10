@@ -18,6 +18,7 @@ include:
   - "CyberSecurity"
   - "Learnings from CTF's"
   - "writeups"
+  - "docs"
 
 # Exclude non-content files
 exclude:
