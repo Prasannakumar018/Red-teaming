@@ -1,3 +1,10 @@
+---
+layout: default
+title: "GraphQL API Vulnerabilities"
+category: ssa
+difficulty: advanced
+tags: [graphql, api, introspection, injection]
+---
 
  ->GraphQL vulnerabilities generally arise due to implementation and design flaws. For example, the introspection feature may be left active, enabling attackers to query the API in order to glean information about its schema.
 

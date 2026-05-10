@@ -1,3 +1,10 @@
+---
+layout: default
+title: "NoSQL Injection"
+category: ssa
+difficulty: intermediate
+tags: [nosql, mongodb, injection, database]
+---
 
 **References:**
 1. https://www.mongodb.com/resources/basics/json-and-bson

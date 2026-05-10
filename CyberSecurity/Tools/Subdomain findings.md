@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Subdomain Enumeration"
+category: tools
+difficulty: beginner
+tags: [subdomain, recon, dns, enumeration]
+---
+
 | Tool            | Purpose                    | When to Use                                                                                     |
 | --------------- | -------------------------- | ----------------------------------------------------------------------------------------------- |
 | **Sublist3r**   | Subdomain enumeration      | Quick scan of subdomains                                                                        |

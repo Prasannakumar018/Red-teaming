@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Insecure Design"
+category: general
+difficulty: intermediate
+tags: [design, architecture, threat-modeling]
+---
+
 **A04:2021-Insecure Design** is a new category for 2021, with a focus on risks related to design flaws.   
 If we genuinely want to "move left" as an industry, it calls for more use of threat modeling, secure design patterns and principles, and reference architectures.
 

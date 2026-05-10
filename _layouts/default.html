@@ -1,352 +1,98 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    {% include head-custom.html %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }} | Red Teaming Guide</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% seo %}
+</head>
+<body>
 
-    <style>
-      /* Search bar */
-      #search-wrapper {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        background: #151515;
-        padding: 12px 0;
-        border-bottom: 1px solid #333;
-      }
-      #search-wrapper .container {
-        max-width: 920px;
-        margin: 0 auto;
-        padding: 0 20px;
-        position: relative;
-      }
-      #search-input {
-        width: 100%;
-        padding: 10px 16px 10px 40px;
-        font-size: 15px;
-        font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
-        background: #1a1a1a;
-        color: #b5e853;
-        border: 1px solid #333;
-        border-radius: 6px;
-        outline: none;
-        box-sizing: border-box;
-        transition: border-color 0.2s;
-      }
-      #search-input:focus {
-        border-color: #b5e853;
-        box-shadow: 0 0 8px rgba(181, 232, 83, 0.2);
-      }
-      #search-input::placeholder {
-        color: #666;
-      }
-      #search-icon {
-        position: absolute;
-        left: 32px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #666;
-        pointer-events: none;
-        font-size: 16px;
-      }
-      /* Results dropdown */
-      #search-results {
-        position: absolute;
-        top: 100%;
-        left: 20px;
-        right: 20px;
-        background: #1a1a1a;
-        border: 1px solid #333;
-        border-top: none;
-        border-radius: 0 0 6px 6px;
-        max-height: 420px;
-        overflow-y: auto;
-        display: none;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-      }
-      #search-results.active {
-        display: block;
-      }
-      .search-result-item {
-        padding: 12px 16px;
-        border-bottom: 1px solid #252525;
-        cursor: pointer;
-        transition: background 0.15s;
-      }
-      .search-result-item:last-child {
-        border-bottom: none;
-      }
-      .search-result-item:hover {
-        background: #222;
-      }
-      .search-result-title {
-        color: #b5e853;
-        font-weight: bold;
-        font-size: 14px;
-        margin-bottom: 4px;
-      }
-      .search-result-path {
-        color: #555;
-        font-size: 11px;
-        margin-bottom: 4px;
-      }
-      .search-result-snippet {
-        color: #999;
-        font-size: 12px;
-        line-height: 1.4;
-      }
-      .search-result-snippet mark {
-        background: transparent;
-        color: #b5e853;
-        font-weight: bold;
-      }
-      .search-no-results {
-        padding: 16px;
-        color: #666;
-        text-align: center;
-        font-size: 13px;
-      }
-      .search-result-count {
-        padding: 8px 16px;
-        color: #555;
-        font-size: 11px;
-        border-bottom: 1px solid #252525;
-      }
-      /* Keyboard hint */
-      .search-hint {
-        padding: 8px 16px;
-        color: #444;
-        font-size: 11px;
-        text-align: center;
-        border-top: 1px solid #252525;
-      }
-      .search-hint kbd {
-        background: #252525;
-        border: 1px solid #333;
-        border-radius: 3px;
-        padding: 1px 5px;
-        font-size: 10px;
-        color: #666;
-      }
-    </style>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
 
-{% seo %}
-  </head>
+      <a class="header-brand" href="{{ '/' | relative_url }}">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <span>Red Teaming Guide</span>
+      </a>
 
-  <body>
+      <div class="header-search">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" id="search-input" placeholder="Search topics... (press /)" autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
 
-    <header>
-      <div class="container">
-        <a id="a-title" href="{{ '/' | relative_url }}">
-          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+      <nav class="header-nav">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="https://github.com/Prasannakumar018/Red-teaming" class="btn-github">
+          <svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
         </a>
-        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
-
-        <section id="downloads">
-          {% if site.show_downloads %}
-            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
-            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
-          {% endif %}
-          <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div id="search-wrapper">
-      <div class="container">
-        <span id="search-icon">&#128269;</span>
-        <input type="text" id="search-input" placeholder="Search all notes... (e.g. magic bytes, SQLi, XSS)" autocomplete="off" />
-        <div id="search-results"></div>
-      </div>
+      </nav>
     </div>
+  </header>
 
-    <div class="container">
-      <section id="main_content">
+  <!-- Sidebar overlay (mobile) -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- Layout -->
+  <div class="site-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      {% for section in site.data.navigation %}
+      <div class="nav-section">
+        <button class="nav-section-toggle">{{ section.title }}</button>
+        <ul class="nav-section-items">
+          {% for item in section.items %}
+          <li><a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+      <article>
+        {% if page.title and page.layout != 'home' %}
+          <h1>{{ page.title }}</h1>
+        {% endif %}
+
+        {% if page.difficulty %}
+          <span class="badge badge--{{ page.difficulty }}">{{ page.difficulty }}</span>
+        {% endif %}
+
+        {% if page.tags and page.layout != 'home' %}
+          <div style="margin-bottom: 20px;">
+            {% for tag in page.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <div class="toc" id="toc"></div>
+
         {{ content }}
-      </section>
-    </div>
+      </article>
 
-    <script>
-    (function() {
-      var searchData = null;
-      var input = document.getElementById('search-input');
-      var resultsContainer = document.getElementById('search-results');
-      var selectedIndex = -1;
+      <footer class="site-footer">
+        Built with Jekyll | <a href="https://github.com/Prasannakumar018/Red-teaming">Contribute on GitHub</a> | CC BY-SA 4.0
+      </footer>
+    </main>
+  </div>
 
-      // Load search index
-      fetch('{{ "/search.json" | relative_url }}')
-        .then(function(r) { return r.json(); })
-        .then(function(data) {
-          // Filter out empty entries and the search.json itself
-          searchData = data.filter(function(item) {
-            return item && item.title && item.content && item.content.trim().length > 0;
-          });
-        })
-        .catch(function(err) { console.error('Search index load failed:', err); });
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">&#8593;</button>
 
-      function escapeHtml(str) {
-        var div = document.createElement('div');
-        div.textContent = str;
-        return div.innerHTML;
-      }
-
-      function getSnippet(content, query, contextLen) {
-        contextLen = contextLen || 80;
-        var lower = content.toLowerCase();
-        var qLower = query.toLowerCase();
-        var idx = lower.indexOf(qLower);
-        if (idx === -1) return '';
-
-        var start = Math.max(0, idx - contextLen);
-        var end = Math.min(content.length, idx + query.length + contextLen);
-        var snippet = '';
-
-        if (start > 0) snippet += '...';
-        var raw = content.substring(start, end);
-
-        // Highlight all occurrences of the query in the snippet
-        var regex = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
-        snippet += escapeHtml(raw).replace(regex, '<mark>$1</mark>');
-        if (end < content.length) snippet += '...';
-
-        return snippet;
-      }
-
-      function search(query) {
-        if (!searchData || query.length < 2) {
-          resultsContainer.className = '';
-          resultsContainer.innerHTML = '';
-          selectedIndex = -1;
-          return;
-        }
-
-        var qLower = query.toLowerCase();
-        var results = [];
-
-        for (var i = 0; i < searchData.length; i++) {
-          var item = searchData[i];
-          var titleMatch = item.title.toLowerCase().indexOf(qLower) !== -1;
-          var contentMatch = item.content.toLowerCase().indexOf(qLower) !== -1;
-
-          if (titleMatch || contentMatch) {
-            // Score: title matches rank higher
-            var score = 0;
-            if (titleMatch) score += 10;
-            if (contentMatch) {
-              // Count occurrences
-              var cnt = 0;
-              var pos = 0;
-              var cLower = item.content.toLowerCase();
-              while ((pos = cLower.indexOf(qLower, pos)) !== -1) { cnt++; pos += qLower.length; }
-              score += cnt;
-            }
-            results.push({ item: item, score: score, titleMatch: titleMatch, contentMatch: contentMatch });
-          }
-        }
-
-        results.sort(function(a, b) { return b.score - a.score; });
-
-        selectedIndex = -1;
-
-        if (results.length === 0) {
-          resultsContainer.innerHTML = '<div class="search-no-results">No results for "<strong>' + escapeHtml(query) + '</strong>"</div>';
-          resultsContainer.className = 'active';
-          return;
-        }
-
-        var html = '<div class="search-result-count">' + results.length + ' result' + (results.length > 1 ? 's' : '') + '</div>';
-
-        var limit = Math.min(results.length, 15);
-        for (var j = 0; j < limit; j++) {
-          var r = results[j];
-          var snippet = getSnippet(r.item.content, query);
-          var titleHtml = escapeHtml(r.item.title).replace(
-            new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi'),
-            '<mark>$1</mark>'
-          );
-
-          html += '<a href="' + r.item.url + '" class="search-result-item" data-idx="' + j + '">'
-            + '<div class="search-result-title">' + titleHtml + '</div>'
-            + '<div class="search-result-path">' + escapeHtml(r.item.url) + '</div>'
-            + (snippet ? '<div class="search-result-snippet">' + snippet + '</div>' : '')
-            + '</a>';
-        }
-
-        if (results.length > limit) {
-          html += '<div class="search-no-results">... and ' + (results.length - limit) + ' more</div>';
-        }
-
-        html += '<div class="search-hint"><kbd>↑</kbd> <kbd>↓</kbd> to navigate &middot; <kbd>Enter</kbd> to open &middot; <kbd>Esc</kbd> to close</div>';
-
-        resultsContainer.innerHTML = html;
-        resultsContainer.className = 'active';
-      }
-
-      function updateSelection() {
-        var items = resultsContainer.querySelectorAll('.search-result-item');
-        for (var i = 0; i < items.length; i++) {
-          items[i].style.background = (i === selectedIndex) ? '#222' : '';
-        }
-        if (selectedIndex >= 0 && items[selectedIndex]) {
-          items[selectedIndex].scrollIntoView({ block: 'nearest' });
-        }
-      }
-
-      // Events
-      var debounceTimer;
-      input.addEventListener('input', function() {
-        clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(function() {
-          search(input.value.trim());
-        }, 150);
-      });
-
-      input.addEventListener('keydown', function(e) {
-        var items = resultsContainer.querySelectorAll('.search-result-item');
-        if (e.key === 'ArrowDown') {
-          e.preventDefault();
-          if (selectedIndex < items.length - 1) { selectedIndex++; updateSelection(); }
-        } else if (e.key === 'ArrowUp') {
-          e.preventDefault();
-          if (selectedIndex > 0) { selectedIndex--; updateSelection(); }
-        } else if (e.key === 'Enter') {
-          e.preventDefault();
-          if (selectedIndex >= 0 && items[selectedIndex]) {
-            window.location.href = items[selectedIndex].getAttribute('href');
-          }
-        } else if (e.key === 'Escape') {
-          resultsContainer.className = '';
-          resultsContainer.innerHTML = '';
-          input.blur();
-        }
-      });
-
-      // Close results when clicking outside
-      document.addEventListener('click', function(e) {
-        if (!e.target.closest('#search-wrapper')) {
-          resultsContainer.className = '';
-        }
-      });
-
-      // Re-show results when clicking back into search
-      input.addEventListener('focus', function() {
-        if (input.value.trim().length >= 2 && resultsContainer.innerHTML) {
-          resultsContainer.className = 'active';
-        }
-      });
-
-      // Keyboard shortcut: "/" to focus search
-      document.addEventListener('keydown', function(e) {
-        if (e.key === '/' && document.activeElement !== input && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
-          e.preventDefault();
-          input.focus();
-        }
-      });
-    })();
-    </script>
-
-  </body>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
 </html>

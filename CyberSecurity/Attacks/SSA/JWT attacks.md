@@ -1,3 +1,11 @@
+---
+layout: default
+title: "JWT Attacks"
+category: ssa
+difficulty: advanced
+tags: [jwt, token, authentication, cryptography]
+---
+
 -> JWTs are most commonly used in authentication, session management, and access control mechanisms, these vulnerabilities can potentially compromise the entire website and its users.
 
 ->JSON web tokens (JWTs) are a standardized format for sending cryptographically signed JSON data between systems. They can theoretically contain any kind of data, but are most commonly used to send information ("claims") about users as part of authentication, session handling, and access control mechanisms.

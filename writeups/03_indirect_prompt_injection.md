@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Indirect Prompt Injection: Weaponizing Documents"
+category: writeups
+difficulty: advanced
+tags: [llm, prompt-injection, ai-security, multi-agent, documents]
+---
+
 # Indirect Prompt Injection: Weaponizing Documents Against AI Agents
 
 > In a multi-agent document processing platform, I discovered that external data — including content from uploaded documents and conversation history — was concatenated directly into LLM context without trust boundary separation. An attacker could embed hidden instructions in a document that hijack the agent's tool-calling behavior when processed.

@@ -1,3 +1,11 @@
+---
+layout: default
+title: "HackingHub Writeups"
+category: ctf
+difficulty: intermediate
+tags: [hackinghub, ctf, labs]
+---
+
 ![](../Random/Pasted%20image%2020250716140502.png): hackinghub
 
 

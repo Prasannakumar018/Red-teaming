@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Client Side Attacks Overview"
+category: csa
+difficulty: beginner
+tags: [client-side, overview]
+---
 
 [Cross-site scripting](../../../CyberSecurity/Attacks/CSA/Cross-site%20scripting)
 [CORS (Cross Origin Resource Sharing)](../../../CyberSecurity/Attacks/CSA/CORS%20(Cross%20Origin%20Resource%20Sharing))

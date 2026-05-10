@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Attack Vectors & Vulnerabilities Table"
+category: general
+difficulty: beginner
+tags: [reference, attacks, overview]
+---
 
 ---------
  ![](../../Random/Pasted%20image%2020250701215504.png)

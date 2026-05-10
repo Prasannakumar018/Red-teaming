@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Broken Access Control"
+category: ssa
+difficulty: intermediate
+tags: [access-control, authorization, privilege-escalation]
+---
 
 Authentication             --> Identifies users and confirms the identity
 Session Management --> Once Authenticated , will be needed to access the other page as well, to make sure with the same user auth we use session.   **(Set-Cookie)**

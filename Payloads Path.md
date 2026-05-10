@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Payloads & Wordlists"
+category: general
+difficulty: beginner
+tags: [payloads, wordlists, fuzzing, tools]
+---
 
 ## **📁 Wordlists: Locations, Names, and Specializations**
 | Wordlist Name / Path                                                   | Purpose / Use Case                           | Best Tool                   | Notes / Specialization                            |

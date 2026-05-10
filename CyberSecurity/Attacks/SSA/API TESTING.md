@@ -1,5 +1,9 @@
 ---
-title: API TESTING
+layout: default
+title: "API Testing"
+category: ssa
+difficulty: intermediate
+tags: [api, rest, testing, enumeration]
 ---
 
 

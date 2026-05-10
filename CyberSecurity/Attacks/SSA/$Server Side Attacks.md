@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Server Side Attacks Overview"
+category: ssa
+difficulty: beginner
+tags: [server-side, overview]
+---
+
 1. [SQL Injection (SQLi)](../../../CyberSecurity/Attacks/SSA/SQL%20Injection%20(SQLi))
 2. [Authentication](../../../CyberSecurity/Attacks/SSA/Authentication)
 3. [OS command Injection](../../../CyberSecurity/Attacks/SSA/OS%20command%20Injection)

@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Security Terminologies"
+category: general
+difficulty: beginner
+tags: [terminology, basics, definitions]
+---
 
 References:
 * https://attack.mitre.org/

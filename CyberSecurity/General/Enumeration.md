@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Enumeration"
+category: general
+difficulty: beginner
+tags: [enumeration, recon, information-gathering]
+---
+
 1. **Brute‑forcing directories**
 
 

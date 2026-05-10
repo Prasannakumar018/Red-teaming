@@ -1,3 +1,11 @@
+---
+layout: default
+title: "HTTP Security Headers"
+category: general
+difficulty: beginner
+tags: [headers, http, csp, hsts]
+---
+
 ## Vulnerable / Misconfigured HTTP Headers – Detailed in Table Format
 
 

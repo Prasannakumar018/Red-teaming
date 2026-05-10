@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Google Dorking"
+category: tools
+difficulty: beginner
+tags: [google, dorking, recon, osint]
+---
 
 
 ### **Vulnerability testing**

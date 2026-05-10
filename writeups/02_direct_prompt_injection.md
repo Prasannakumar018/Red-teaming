@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Direct Prompt Injection in Document AI"
+category: writeups
+difficulty: advanced
+tags: [llm, prompt-injection, ai-security, guardrails]
+---
+
 # Breaking LLM Guardrails: Direct Prompt Injection in a Document AI Platform
 
 > During a white-box assessment of an AI-powered document processing platform, I discovered that the prompt validation layer — designed to prevent injection attacks — had its critical methods commented out in production. User input reached the LLM with nothing more than whitespace normalization, enabling full prompt override attacks against the document extraction pipeline.

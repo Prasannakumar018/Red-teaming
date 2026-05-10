@@ -3,12 +3,15 @@ layout: null
 ---
 [
   {% for page in site.pages %}
-    {% if page.url contains '.json' or page.url contains '.xml' or page.url contains '.css' or page.url contains '.js' %}
+    {% if page.url contains '.json' or page.url contains '.xml' or page.url contains '.css' or page.url contains '.js' or page.url contains 'assets/' %}
     {% else %}
     {
-      "title": {{ page.title | default: page.name | replace: ".md", "" | jsonify }},
+      "title": {{ page.title | default: page.name | replace: ".md", "" | replace: "-", " " | jsonify }},
       "url": {{ page.url | relative_url | jsonify }},
-      "content": {{ page.content | strip_html | strip_newlines | replace: '"', '\"' | replace: '\', '\\' | jsonify }}
+      "category": {{ page.category | default: "" | jsonify }},
+      "difficulty": {{ page.difficulty | default: "" | jsonify }},
+      "tags": {{ page.tags | default: "" | join: ", " | jsonify }},
+      "content": {{ page.content | strip_html | strip_newlines | replace: '"', '\"' | replace: '\', '\\' | truncate: 5000 | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {% endif %}
   {% endfor %}

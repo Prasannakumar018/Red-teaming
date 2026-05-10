@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Cryptographic Failures"
+category: general
+difficulty: intermediate
+tags: [cryptography, hashing, encryption, tls]
+---
+
 #### previously known as **_"Sensitive Data Exposure"_**
 
 

@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Nmap"
+category: tools
+difficulty: beginner
+tags: [nmap, scanning, port-scan, network]
+---
 
 Nmap is a powerful network scanning tool with many options and flags. I'll provide a comprehensive overview starting from beginner-level commands to advanced usage, explaining the main options and their purposes.
 

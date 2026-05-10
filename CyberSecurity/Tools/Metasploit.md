@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Metasploit Framework"
+category: tools
+difficulty: intermediate
+tags: [metasploit, exploitation, framework]
+---
+
 **Refernce:**
 * Ec-council course
 

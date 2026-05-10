@@ -1,3 +1,11 @@
+---
+layout: default
+title: "General Techniques"
+category: general
+difficulty: beginner
+tags: [general, techniques, tips]
+---
+
 - Waybackurl (https://web.archive.org/)
 - google dorking [Google dorking](../../CyberSecurity/Tools/Google%20dorking)
 - Check js files for credentials leakage[https://github.com/GerbenJavado/LinkFinder]

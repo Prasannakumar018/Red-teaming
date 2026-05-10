@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Cross-Site Request Forgery (CSRF)"
+category: csa
+difficulty: intermediate
+tags: [csrf, cross-site, tokens]
+---
 
 
 ## What is CSRF?

@@ -1,3 +1,11 @@
+---
+layout: default
+title: "OWASP Top 10"
+category: general
+difficulty: beginner
+tags: [owasp, top-10, overview, web-security]
+---
+
 
 | LIST                                            | FILE                                     |
 | ----------------------------------------------- | ---------------------------------------- |

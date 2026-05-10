@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Cookies"
+category: general
+difficulty: beginner
+tags: [cookies, session, httponly, secure]
+---
 
 Cookies in HTTP are managed through specific headers, mainly used for storing and sending small pieces of data between the client (browser) and the server. Here are the main **cookie-related HTTP headers** and their purposes:
 

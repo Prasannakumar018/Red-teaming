@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Auth Bypass to SSRF via JWT Parsing Flaw"
+category: writeups
+difficulty: advanced
+tags: [jwt, ssrf, authentication, cloud, credential-leakage]
+---
+
 # How I Turned a JWT Parsing Flaw Into Full SSRF With Credential Leakage
 
 > A white-box security assessment of a cloud-native SaaS platform revealed that a shared authentication library decoded JWT tokens without signature verification. The extracted claims were then used to construct outbound HTTP requests — turning a cryptographic oversight into a server-side request forgery (SSRF) vulnerability with credential exfiltration.

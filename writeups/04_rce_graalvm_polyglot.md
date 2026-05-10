@@ -1,3 +1,11 @@
+---
+layout: default
+title: "RCE via GraalVM Polyglot Sandbox Escape"
+category: writeups
+difficulty: advanced
+tags: [rce, graalvm, java, sandbox-escape, polyglot]
+---
+
 # From Filter Parameter to Remote Code Execution: GraalVM Polyglot Sandbox Escape
 
 > A shared Java library used by every microservice in a cloud-native platform evaluated filter expressions using GraalVM's polyglot engine with `HostAccess.ALL` — granting JavaScript code full access to the Java runtime. A single injectable filter parameter meant Remote Code Execution across the entire service mesh.

@@ -1,3 +1,10 @@
+---
+layout: default
+title: "SQL Injection"
+category: ssa
+difficulty: intermediate
+tags: [sql, injection, database, union, blind]
+---
 
 Most of the attacks will occurs in one of these:
 - Select
